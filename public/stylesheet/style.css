@@ -1,0 +1,20 @@
+body{
+    background-image: url("https://thumbs.dreamstime.com/b/sign-up-concept-theme-written-old-paper-grunge-background-word-106144983.jpg");
+    background-size: cover;
+}
+
+h2, label{
+    font-weight: 900;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+button{
+
+    font-weight: 600;
+    margin-left: 28%;
+    margin-top: 2%;
+    width: 40%;
+}
