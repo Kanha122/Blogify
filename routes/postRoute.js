@@ -74,7 +74,7 @@ router.post(
   uploads.single("postImage"),
   async function (req, res) {
     let { title, meaning, description } = req.body;
-    const postImage = '/uploads/'+ req.file.filename;
+    let postImage = '/uploads/'+ req.file.filename;
 
     let updatedPost = await postModel.findOneAndUpdate(
       { _id: req.params.id },
