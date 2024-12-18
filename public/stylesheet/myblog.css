@@ -1,0 +1,27 @@
+body{
+    background-image: url("https://www.shutterstock.com/image-vector/vectorabstract-background-sciencehexagon-geometric-design-260nw-448387069.jpg");
+    background-size: cover;
+}
+
+.btn{
+    width: 30%;
+    margin-top: 6%;
+    font-weight: 900;
+}
+.edit{
+    width: 30%;
+    font-weight: 900;
+
+}
+
+.delete{
+    width: 30%;
+    margin-top: 3%;
+    font-weight: 900;
+
+}
+
+.heading{
+    margin:20%;
+    font-weight: 900;
+}

@@ -4,7 +4,6 @@ const comment=mongoose.Schema({
 
     comment:{
         type:String,
-        required:true,
     },
 
     createdById:{
@@ -19,4 +18,4 @@ const comment=mongoose.Schema({
 
 },{timestamps:true});
 
-module.exports=mongoose.model("commentModel", post);
+module.exports=mongoose.model("commentModel", comment);

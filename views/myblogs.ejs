@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/myblog.css">
+    
+    <%- include("./partials/head") %>
+</head>
+<body>
+    <%- include("./partials/nav") %>
+
+
+    <% if(posts.length > 0){ %>
+        <div class="container mt-3">
+            <div class="row row-cols-4">
+       <% posts.forEach((post)=>{ %>
+        <div class="col">
+        <div class="card col p-2 mb-2" style="width: 18rem;">
+            <img src="<%= post.postImage %>" class="card card-img-top mt-1 rounded-mg" alt="...">
+            <div class="card-body">
+              <h4 class="card-title"><%= post.title %></h4>
+              <h6 class="card-title"><%= post.meaning %></h6>
+              <a href="/post/<%= post._id %>" class="btn btn-primary">View</a>
+              <a href="/post/edit/<%= post._id %>" class="btn btn-primary edit  bg-dark text-white">Edit</a>
+              <a href="/post/deletePost/<%= post._id %>" class="btn btn-primary delete bg-danger text-white">Delete</a>
+            </div>
+          </div>
+          </div>
+        <% }) %>
+       </div>
+    </div>
+
+   <% } else{ %>
+
+    <h3 class="heading text-center">No Post Yet</h3>
+
+  <% } %>
+
+
+
+
+
+
+
+    <%- include("./partials/script") %>
+</body>
+</html>

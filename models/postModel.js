@@ -7,6 +7,11 @@ const post=mongoose.Schema({
         required:true,
     },
 
+    meaning:{
+        type:String,
+        required:true,
+    },
+
     description:{
         type:String,
         required:true,

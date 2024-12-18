@@ -7,7 +7,7 @@ module.exports.isLoggedIn = async function (req, res, next){
 
   if (!token){
     
-     next();
+      return next();
   }
 
   try {
@@ -15,9 +15,10 @@ module.exports.isLoggedIn = async function (req, res, next){
 
     const user = await userModel.findOne({ email: decoded.email });
     req.user = user;
-    next();
-  } catch (err) {
-      next();
+     return next();
+
+  } catch(err){
+     return next();
   }
 };
 

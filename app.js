@@ -7,6 +7,7 @@ const userRouter=require("./routes/userRoute");
 const postRouter=require("./routes/postRoute");
 const exp = require("constants");
 const {isLoggedIn}=require("./middleware/islogin");
+const postModel=require("./models/postModel");
 
 
 
@@ -20,8 +21,9 @@ app.use("/user", userRouter);
 app.use("/post", postRouter);
 
 
-app.get("/",isLoggedIn ,function(req, res){
-    res.render("home", {user:req.user});
+app.get("/", isLoggedIn ,async function(req, res){
+    let allPosts=await postModel.find({});
+    return res.render("home", {user:req.user, posts:allPosts});
 });
 
 app.listen(3000, ()=>{

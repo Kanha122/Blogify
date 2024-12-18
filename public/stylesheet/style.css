@@ -5,10 +5,12 @@ body{
 
 h2, label{
     font-weight: 900;
+   
 }
 
 label{
     font-size: 1.5rem;
+    color: white;
 }
 
 button{

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Document</title>
+    <style>
+        body{
+         background-image: url("https://img.freepik.com/premium-photo/female-office-desk-with-copy-space-pink-background-smartphone-mockup-accessories-top-view_67155-19733.jpg"); 
+         background-size: cover;       
+        }
+
+        .btn{
+            width:65%;
+            margin-left: 16%;
+            font-weight: 900;
+        }
+
+        label{
+            font-weight: 900;
+            font-size: 1.3rem;
+        }
+        h1{
+            font-weight: 900;
+
+        }
+    </style>
+</head>
+<body>
+    <%- include("./partials/nav") %>
+    <div class="container mt-5">
+        <div class="heading">
+            <h1 class="text-center mb-4">Edit Your Blog</h1>
+        </div>
+        <form action="/post/update/<%= post._id %>" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= post.title %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Meaning</label>
+                <input type="text" class="form-control" id="title" name="meaning" value="<%= post.meaning %>">
+            </div>
+
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><%= post.description %></textarea>
+                    <label for="floatingTextarea2">Enter Your Post Description</label>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="image" class="form-label text-bold">Cover Image</label>
+                    <input type="file" class="form-control" id="image" name="postImage"></div>
+
+                  
+            
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+          </form>
+    </div>
+
+    <%- include("./partials/script") %>
+</body>
+</html>

@@ -28,7 +28,11 @@ const user=mongoose.Schema({
         type:String,
         enum:["USER", "ADMIN"],
         default:"USER",
-    }
+    },
+    date:{
+        type:Date,
+        default: Date.now(),
+    },
 
 },{timestamps:true});
 
